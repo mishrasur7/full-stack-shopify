@@ -1,15 +1,15 @@
 import mongoose, { Document, Schema } from 'mongoose'
 
 export interface AddressDocument extends Document {
-  streetName: string
+  streetname: string
   city: string
   country: string
   state: string
-  postalCode: string
+  postalcode: string
 }
 
 const AddressSchema = new Schema({
-  streetName: {
+  streetname: {
     type: String,
     required: true,
   },
@@ -25,7 +25,7 @@ const AddressSchema = new Schema({
     type: String,
     required: true,
   },
-  postalCode: {
+  postalcode: {
     type: String,
     required: true,
   },
