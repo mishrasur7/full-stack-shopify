@@ -1,4 +1,5 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose'
+import bcrypt from 'bcrypt'
 
 export interface UserDocument extends Document {
   firstname: string
@@ -44,6 +45,25 @@ const UserSchema = new Schema({
     },
   ],
 })
+
+UserSchema.pre<UserDocument>(
+  'save',
+  { document: true, query: false },
+  async function (next) {
+    if (this.isModified('password') || this.isNew) {
+      try {
+        this.password = await bcrypt.hash(this.password, 10)
+        return next()
+      } catch (e: any) {
+        return next(e)
+      }
+    }
+  }
+)
+
+UserSchema.methods.comparePassword = async function (password: string) {
+  return await bcrypt.compare(password, this.password)
+}
 
 const User = mongoose.model<UserDocument>('User', UserSchema)
 export default User
