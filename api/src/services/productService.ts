@@ -5,8 +5,11 @@ const createOne = async (productReview: ProductDocument) => {
   return await productReview.save()
 }
 
-const findAll = async () => {
+const findAll = async (page: number, limit: number, sort: string) => {
   return await Product.find()
+    .sort({ [sort]: 1 })
+    .limit(limit)
+    .skip(page * limit)
 }
 
 const findById = async (productId: string) => {
