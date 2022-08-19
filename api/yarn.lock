@@ -1397,10 +1397,10 @@
   "resolved" "https://registry.npmjs.org/bson/-/bson-1.1.6.tgz"
   "version" "1.1.6"
 
-"bson@^4.6.5":
-  "integrity" "sha512-uqrgcjyOaZsHfz7ea8zLRCLe1u+QGUSzMZmvXqO24CDW7DWoW1qiN9folSwa7hSneTSgM2ykDIzF5kcQQ8cwNw=="
-  "resolved" "https://registry.npmjs.org/bson/-/bson-4.6.5.tgz"
-  "version" "4.6.5"
+"bson@^4.6.5", "bson@^4.7.0":
+  "integrity" "sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA=="
+  "resolved" "https://registry.npmjs.org/bson/-/bson-4.7.0.tgz"
+  "version" "4.7.0"
   dependencies:
     "buffer" "^5.6.0"
 
@@ -1473,9 +1473,9 @@
   "version" "6.2.0"
 
 "caniuse-lite@^1.0.30001264":
-  "integrity" "sha512-YzBnspggWV5hep1m9Z6sZVLOt7vrju8xWooFAgN6BA5qvy98qPAPb7vNUzypFaoh2pb3vlfzbDO8tB57UPGbtw=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001265.tgz"
-  "version" "1.0.30001265"
+  "integrity" "sha512-JVQnfoO7FK7WvU4ZkBRbPjaot4+YqxogSDosHv0Hv5mWpUESmN+UubMU6L/hGz8QlQ2aY5U0vR6MOs6j/CXpNA=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001378.tgz"
+  "version" "1.0.30001378"
 
 "capture-exit@^2.0.0":
   "integrity" "sha512-PiT/hQmTonHhl/HFGN+Lx3JJUznrVYJ3+AQsnthneZbvW7x+f08Tk7yLJTLEOUvBTbduLeeBkxEaYXUOUrRq6g=="
@@ -1562,6 +1562,11 @@
   "integrity" "sha512-uc2Vix1frTfnuzxxu1Hp4ktSvM3QaI4oXl4ZUqL1wjTu/BGki9TrCWoqLTg/drR1KwAEarXuRFCG2Svr1GxPFw=="
   "resolved" "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-0.6.0.tgz"
   "version" "0.6.0"
+
+"class-transformer@^0.5.1":
+  "integrity" "sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw=="
+  "resolved" "https://registry.npmjs.org/class-transformer/-/class-transformer-0.5.1.tgz"
+  "version" "0.5.1"
 
 "class-utils@^0.3.5":
   "integrity" "sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg=="
@@ -1983,7 +1988,7 @@
   "resolved" "https://registry.npmjs.org/denque/-/denque-1.5.1.tgz"
   "version" "1.5.1"
 
-"denque@^2.0.1":
+"denque@^2.0.1", "denque@^2.1.0":
   "integrity" "sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw=="
   "resolved" "https://registry.npmjs.org/denque/-/denque-2.1.0.tgz"
   "version" "2.1.0"
@@ -4250,7 +4255,7 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
-"mongodb-connection-string-url@^2.5.2":
+"mongodb-connection-string-url@^2.5.2", "mongodb-connection-string-url@^2.5.3":
   "integrity" "sha512-f+/WsED+xF4B74l3k9V/XkTVj5/fxFH2o5ToKXd8Iyi5UhM+sO9u0Ape17Mvl/GkZaFtM0HQnzAG5OTmhKw+tQ=="
   "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.3.tgz"
   "version" "2.5.3"
@@ -4289,10 +4294,17 @@
     "mongodb-memory-server-core" "6.10.0"
     "tslib" "^2.3.0"
 
+"mongodb-typescript@^3.0.0":
+  "integrity" "sha512-SBhe8ttj33q1Ccn14UdtTFQVOPYvpMqLxJtB7AXCc4SRTe8AA6KWjdqDPLDJWw/B5E4LpLpqmjwoNsgoKL1PlQ=="
+  "resolved" "https://registry.npmjs.org/mongodb-typescript/-/mongodb-typescript-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "class-transformer" "^0.5.1"
+
 "mongodb@^3.6.9":
-  "integrity" "sha512-/Qi0LmOjzIoV66Y2JQkqmIIfFOy7ZKsXnQNlUXPFXChOw3FCdNqVD5zvci9ybm6pkMe/Nw+Rz9I0Zsk2a+05iQ=="
-  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-3.7.2.tgz"
-  "version" "3.7.2"
+  "integrity" "sha512-Psm+g3/wHXhjBEktkxXsFMZvd3nemI0r3IPsE0bU+4//PnvNWKkzhZcEsbPcYiWqe8XqXJJEg4Tgtr7Raw67Yw=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-3.7.3.tgz"
+  "version" "3.7.3"
   dependencies:
     "bl" "^2.2.1"
     "bson" "^1.1.4"
@@ -4301,6 +4313,18 @@
     "safe-buffer" "^5.1.2"
   optionalDependencies:
     "saslprep" "^1.0.0"
+
+"mongodb@^4.8.0":
+  "integrity" "sha512-tJJEFJz7OQTQPZeVHZJIeSOjMRqc5eSyXTt86vSQENEErpkiG7279tM/GT5AVZ7TgXNh9HQxoa2ZkbrANz5GQw=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.9.0.tgz"
+  "version" "4.9.0"
+  dependencies:
+    "bson" "^4.7.0"
+    "denque" "^2.1.0"
+    "mongodb-connection-string-url" "^2.5.3"
+    "socks" "^2.7.0"
+  optionalDependencies:
+    "saslprep" "^1.0.3"
 
 "mongodb@4.8.1":
   "integrity" "sha512-/NyiM3Ox9AwP5zrfT9TXjRKDJbXlLaUDQ9Rg//2lbg8D2A8GXV0VidYYnA/gfdK6uwbnL4FnAflH7FbGw3TS7w=="
@@ -5016,6 +5040,11 @@
     "micromatch" "^3.1.10"
     "readable-stream" "^2.0.2"
 
+"reflect-metadata@^0.1.13":
+  "integrity" "sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg=="
+  "resolved" "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
+  "version" "0.1.13"
+
 "regex-not@^1.0.0", "regex-not@^1.0.2":
   "integrity" "sha512-J6SDjUgDxQj5NusnOtdFxDwN/+HWykR8GELwctJ7mdqhcyy1xEc4SRFHUXvxTp661YaVKAjfRLZ9cCqS6tn32A=="
   "resolved" "https://registry.npmjs.org/regex-not/-/regex-not-1.0.2.tgz"
@@ -5447,7 +5476,7 @@
     "source-map-resolve" "^0.5.0"
     "use" "^3.1.0"
 
-"socks@^2.6.2":
+"socks@^2.6.2", "socks@^2.7.0":
   "integrity" "sha512-scnOe9y4VuiNUULJN72GrM26BNOjVsfPXI+j+98PkyEfsIXroa5ofyjT+FzGvn/xHs73U2JtoBYAVx9Hl4quSA=="
   "resolved" "https://registry.npmjs.org/socks/-/socks-2.7.0.tgz"
   "version" "2.7.0"

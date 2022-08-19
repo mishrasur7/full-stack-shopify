@@ -5,14 +5,22 @@ const connect = async () => {
   const mongod = await MongoMemoryServer.create()
   const uri = mongod.getUri()
 
-  const mongooseOpts: ConnectOptions = {
+  //creating type coz the version 6 of mongoose doesnot support connectionoptions 
+  /* type ConnectionOptionsExtend = {
+    useNewUrlParser: boolean
+    useUnifiedTopology: boolean
+    useFindAndModify: boolean
+    useCreateIndex: boolean
+  }
+
+  const mongooseOpts: ConnectOptions & ConnectionOptionsExtend = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
-  }
+  } */
 
-  await mongoose.connect(uri, mongooseOpts)
+  await mongoose.connect(uri)
 
   return {
     closeDatabase: async () => {

@@ -8,7 +8,7 @@ export interface UserDocument extends Document {
   email: string
   password: string
   address: ObjectId[]
-  phonenumber: number
+  phonenumber: string
   reviews: ObjectId[]
 }
 
@@ -42,7 +42,7 @@ const UserSchema = new Schema({
     },
   ],
   phonenumber: {
-    type: Number,
+    type: String,
     required: true,
   },
   reviews: [

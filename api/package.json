@@ -30,6 +30,7 @@
     "lodash": "^4.17.15",
     "lusca": "^1.7.0",
     "mongodb-memory-server": "^6.3.1",
+    "mongodb-typescript": "^3.0.0",
     "mongoose": "^6.5.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
