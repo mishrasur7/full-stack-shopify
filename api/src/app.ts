@@ -2,7 +2,8 @@ import express from 'express'
 // import lusca from 'lusca' will be used later
 import dotenv from 'dotenv'
 
-import movieRouter from './routers/movie'
+import productRoute from './routers/productRoute'
+
 import apiErrorHandler from './middlewares/apiErrorHandler'
 import apiContentType from './middlewares/apiContentType'
 
@@ -17,7 +18,7 @@ app.use(apiContentType)
 app.use(express.json())
 
 // Set up routers
-app.use('/api/v1/movies', movieRouter)
+app.use('/api/v1/products', productRoute)
 
 // Custom API error handler
 app.use(apiErrorHandler)

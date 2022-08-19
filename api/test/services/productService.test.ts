@@ -30,6 +30,7 @@ afterAll(async () => {
 describe('test product service', () => {
   test('should find all with pagination and sorting', async () => {
     const products = await productService.findAll(0, 3, 'price')
+    console.log(products)
     expect(products.length).toBe(3)
     expect(products[0].title).toEqual(product1.title)
     expect(products[2].price).toEqual(product2.price)
