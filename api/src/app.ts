@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 
 import productRoute from './routers/productRoute'
+import addressRoute from './routers/addressRoute'
 
 import apiErrorHandler from './middlewares/apiErrorHandler'
 import apiContentType from './middlewares/apiContentType'
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // Set up routers
 app.use('/api/v1/products', productRoute)
+app.use('/api/v1/addresses', addressRoute)
 
 // Custom API error handler
 app.use(apiErrorHandler)
