@@ -7,7 +7,7 @@ export interface UserDocument extends Document {
   username: string
   email: string
   password: string
-  address: ObjectId[]
+  address: ObjectId
   phonenumber: string
   reviews: ObjectId[]
 }
@@ -35,12 +35,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  address: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Address',
-    },
-  ],
+  address: {
+    type: Schema.Types.ObjectId,
+    ref: 'Address',
+  },
   phonenumber: {
     type: String,
     required: true,
@@ -61,8 +59,8 @@ UserSchema.pre<UserDocument>(
       try {
         this.password = await bcrypt.hash(this.password, 10)
         return next()
-      } catch (e: any) {
-        return next(e)
+      } catch (e) {
+        return next()
       }
     }
   }
