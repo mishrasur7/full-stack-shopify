@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get('/', productReviewController.findAll)
 router.get('/:productId', productReviewController.findById)
-router.post('/', productReviewController.findAll)
+router.post('/', productReviewController.createProductReview)
 router.put('/:productId', productReviewController.updateProductReview)
 router.delete('/:productId', productReviewController.deleteProductReview)
 
