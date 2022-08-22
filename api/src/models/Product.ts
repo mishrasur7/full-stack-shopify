@@ -1,7 +1,6 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose'
 
 export interface ProductDocument extends Document {
-  //productId: ObjectId,
   title: string
   price: number
   sellerId: ObjectId
@@ -11,11 +10,6 @@ export interface ProductDocument extends Document {
 }
 
 const ProductDocumentSchema = new Schema({
-  /*  productId: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        auto: true
-    }, */
   title: {
     type: String,
     required: true,
