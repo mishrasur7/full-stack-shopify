@@ -1,6 +1,8 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose'
 import bcrypt from 'bcrypt'
 
+type Role = 'buyer' | 'seller'
+
 export interface UserDocument extends Document {
   firstname: string
   lastname: string
@@ -9,7 +11,7 @@ export interface UserDocument extends Document {
   password: string
   address: ObjectId
   phonenumber: string
-  reviews: ObjectId[]
+  role: Role
 }
 
 const UserSchema = new Schema({
@@ -43,12 +45,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  reviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'UserReview',
-    },
-  ],
+  role: {
+    type: String,
+    required: true,
+    enum: ['buyer', 'seller'],
+  },
 })
 
 UserSchema.pre<UserDocument>(
@@ -60,7 +61,7 @@ UserSchema.pre<UserDocument>(
         this.password = await bcrypt.hash(this.password, 10)
         return next()
       } catch (e) {
-        return next()
+        return next(e)
       }
     }
   }

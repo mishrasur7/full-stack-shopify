@@ -40,7 +40,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
       password,
       address,
       phonenumber,
-      reviews,
+      role,
     } = req.body
 
     const user = new User({
@@ -51,7 +51,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
       password,
       address,
       phonenumber,
-      reviews,
+      role,
     })
     await userService.createOne(user)
     res.json(user)
