@@ -6,7 +6,6 @@ export interface ProductDocument extends Document {
   sellerId: ObjectId
   images: string[]
   categories: ObjectId[]
-  reviews: ObjectId[]
 }
 
 const ProductDocumentSchema = new Schema({
@@ -32,12 +31,6 @@ const ProductDocumentSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Category',
-    },
-  ],
-  reviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'ProductReview',
     },
   ],
 })
