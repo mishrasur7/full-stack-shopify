@@ -1,7 +1,7 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose'
 import bcrypt from 'bcrypt'
 
-type Role = 'buyer' | 'seller'
+type Role = 'buyer' | 'seller' | 'admin'
 
 export interface UserDocument extends Document {
   firstname: string
@@ -48,7 +48,7 @@ const UserSchema = new Schema({
   role: {
     type: String,
     required: true,
-    enum: ['buyer', 'seller'],
+    enum: ['buyer', 'seller', 'admin'],
   },
 })
 
