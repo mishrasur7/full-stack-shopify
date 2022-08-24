@@ -2,7 +2,7 @@ import mongoose, { Document, Schema } from 'mongoose'
 
 export interface CategoryDocument extends Document {
   name: string
-  image: string
+  categoryImage: string
 }
 
 const CategorySchema = new Schema({
@@ -11,7 +11,7 @@ const CategorySchema = new Schema({
     unique: true,
     required: true,
   },
-  image: {
+  categoryImage: {
     type: String,
     required: true,
   },

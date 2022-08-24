@@ -4,7 +4,7 @@ export interface ProductDocument extends Document {
   title: string
   price: number
   sellerId: ObjectId
-  images: string[]
+  productImage: string[]
   categories: ObjectId[]
 }
 
@@ -22,7 +22,7 @@ const ProductDocumentSchema = new Schema({
     ref: 'User',
     required: true,
   },
-  images: [
+  productImage: [
     {
       type: String,
     },
