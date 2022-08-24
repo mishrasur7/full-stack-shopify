@@ -1,8 +1,11 @@
 import { Request, Response, NextFunction } from 'express'
+import fs from 'fs'
+import sharp from 'sharp'
 
 import categoryService from '../services/categoryServices'
 import { BadRequestError } from '../../src/helpers/apiError'
 import Category from '../../src/models/Category'
+import imageServices from '../services/imageServices'
 
 // GET all categorys
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
@@ -37,13 +40,19 @@ const createCategory = async (
   next: NextFunction
 ) => {
   try {
-    const { name, image } = req.body
-    const category = new Category({
-      name,
-      image,
-    })
-    await categoryService.createOne(category)
-    res.json(category)
+    if (req.file?.path) {
+      const dataBuffer = fs.readFileSync(req.file.path)
+      const data = await sharp(dataBuffer).resize(200, 200).toBuffer()
+      const image = await imageServices.createImage(data)
+      const categoryImage = `${image._id}`
+      const { name } = req.body
+      const category = new Category({
+        name,
+        categoryImage,
+      })
+      const newCategory = await categoryService.createOne(category)
+      res.json(newCategory)
+    }
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))

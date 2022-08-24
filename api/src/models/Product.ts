@@ -25,6 +25,7 @@ const ProductDocumentSchema = new Schema({
   productImage: [
     {
       type: String,
+      required: false,
     },
   ],
   categories: [

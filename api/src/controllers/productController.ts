@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from 'express'
+import fs from 'fs'
+import sharp from 'sharp'
+
 import productService from '../../src/services/productService'
 import Product from '../../src/models/Product'
 import { BadRequestError } from '../../src/helpers/apiError'
+import imageServices from '../services/imageServices'
 
 // GET all products
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
@@ -36,18 +40,23 @@ const createProduct = async (
   next: NextFunction
 ) => {
   try {
-    const { title, price, sellerId, images, categories, reviews } = req.body
-
-    const product = new Product({
-      title,
-      price,
-      sellerId,
-      images,
-      categories,
-      reviews,
-    })
-    await productService.createOne(product)
-    res.json(product)
+    if (req.file?.path) {
+      const dataBuffer = fs.readFileSync(req.file.path)
+      const data = await sharp(dataBuffer).resize(200, 200).toBuffer()
+      const image = await imageServices.createImage(data)
+      const productImage = `${image._id}`
+      const { title, price, sellerId, categories, reviews } = req.body
+      const product = new Product({
+        title,
+        price,
+        sellerId,
+        productImage,
+        categories,
+        reviews,
+      })
+      const newProduct = await productService.createOne(product)
+      res.json(newProduct)
+    }
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
