@@ -18,5 +18,8 @@
     "src/**/*",
     "test/**/*", 
     "test/**/*.ts"
-  ]
+  ],
+  // "rules": {
+  //   "@typescript-eslint/camelcase": "off"
+  // }
 }
