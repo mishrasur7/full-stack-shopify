@@ -1,7 +1,10 @@
 import { Request, Response, NextFunction } from 'express'
+import jwt from 'jsonwebtoken'
+
 import userService from '../../src/services/userService'
 import User from '../../src/models/User'
 import { BadRequestError } from '../../src/helpers/apiError'
+import { JWT_SECRET } from '../util/secrets'
 
 // GET all users
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
@@ -94,10 +97,19 @@ const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
+//returns token after user login
+const userLogin = async (req: Request, res: Response) => {
+  const token = jwt.sign(JSON.stringify(req.body), `${JWT_SECRET}`, {
+    algorithm: 'HS256',
+  })
+  return res.json(token)
+}
+
 export default {
   findAll,
   findById,
   updateUser,
   deleteUser,
   createUser,
+  userLogin,
 }

@@ -12,6 +12,7 @@ export interface UserDocument extends Document {
   address: ObjectId
   phonenumber: string
   role: Role
+  comparePassword(password: string): Promise<boolean>
 }
 
 const UserSchema = new Schema({

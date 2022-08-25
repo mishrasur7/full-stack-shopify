@@ -21,7 +21,7 @@ const app = express()
 // Express configuration
 app.set('port', process.env.PORT || 3000)
 
-/* PASSPORT */
+/// Passport configuration
 app.use(
     session({
       secret: `${process.env.SESSION_SECRET}`,
@@ -31,7 +31,8 @@ app.use(
   )
   app.use(passport.initialize())
   app.use(passport.session())
-//   passport.use(googleStrategy)
+
+// passport.use(googleStrategy)
   passport.use(jwtStrategy)
 
 // Global middleware

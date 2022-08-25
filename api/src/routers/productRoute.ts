@@ -2,6 +2,8 @@ import express from 'express'
 import multerServices from '../services/multerServices'
 
 import productController from '../../src/controllers/productController'
+import passport from 'passport'
+import authentication from '../middlewares/authenticationMiddleware'
 
 const router = express.Router()
 
@@ -13,7 +15,17 @@ router.post(
 )
 router.get('/', productController.findAll)
 router.get('/:productId', productController.findById)
-router.put('/:productId', productController.updateProduct)
-router.delete('/:productId', productController.deleteProduct)
+router.put(
+  '/:productId',
+  passport.authenticate('jwt'),
+  authentication.verifyAdmin,
+  productController.updateProduct
+)
+router.delete(
+  '/:productId',
+  passport.authenticate('jwt'),
+  authentication.verifyAdmin,
+  productController.deleteProduct
+)
 
 export default router
