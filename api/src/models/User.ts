@@ -60,7 +60,7 @@ UserSchema.pre<UserDocument>(
       try {
         this.password = await bcrypt.hash(this.password, 10)
         return next()
-      } catch (e) {
+      } catch (e:any) {
         return next(e)
       }
     }

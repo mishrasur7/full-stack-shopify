@@ -1,7 +1,10 @@
 import express from 'express'
 // import lusca from 'lusca' will be used later
 import dotenv from 'dotenv'
+import passport from 'passport'
+import session from 'express-session'
 
+import { jwtStrategy } from './config/passport'
 import apiErrorHandler from './middlewares/apiErrorHandler'
 import apiContentType from './middlewares/apiContentType'
 import productRoute from './routers/productRoute'
@@ -17,6 +20,19 @@ const app = express()
 
 // Express configuration
 app.set('port', process.env.PORT || 3000)
+
+/* PASSPORT */
+app.use(
+    session({
+      secret: `${process.env.SESSION_SECRET}`,
+      resave: true,
+      saveUninitialized: true,
+    })
+  )
+  app.use(passport.initialize())
+  app.use(passport.session())
+//   passport.use(googleStrategy)
+  passport.use(jwtStrategy)
 
 // Global middleware
 app.use(apiContentType)
