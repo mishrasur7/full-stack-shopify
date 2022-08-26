@@ -1,6 +1,9 @@
 # Fullstack-Typescript-Project
 
-You can follow the same topics as your backend project. It is also possible to switch the topic
+## API deployment home url
+https://vast-wave-18172.herokuapp.com/
+
+
 
 ## Prerequisites
 

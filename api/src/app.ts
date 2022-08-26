@@ -14,6 +14,7 @@ import userRoute from './routers/userRoute'
 import productReviewRoute from './routers/productReviewRoute'
 import categoryRoute from './routers/categoryRoute'
 import cartRoute from './routers/cartRoute'
+import homeRoute from './routers/homePageRoute'
 
 dotenv.config({ path: '.env' })
 const app = express()
@@ -40,6 +41,7 @@ app.use(apiContentType)
 app.use(express.json())
 
 // Set up routers
+app.get('/', homeRoute)
 app.use('/api/v1/products', productRoute)
 app.use('/api/v1/addresses', addressRoute)
 app.use('/api/v1/userreviews', userReviewRoute)
