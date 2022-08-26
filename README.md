@@ -1,5 +1,8 @@
 # Fullstack-Typescript-Project
 
+## API TechStack
+NodeJs, Express, TypeScript, MongoDB
+
 ## API deployment home url
 https://vast-wave-18172.herokuapp.com/
 
