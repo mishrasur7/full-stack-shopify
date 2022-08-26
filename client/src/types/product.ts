@@ -6,3 +6,7 @@ export interface Product {
   categories: string;
 }
 
+export interface UpdateActionType {
+  id: number;
+  update: Partial<Product>;
+}
