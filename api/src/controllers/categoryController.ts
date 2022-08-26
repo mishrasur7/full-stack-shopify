@@ -7,7 +7,7 @@ import { BadRequestError } from '../../src/helpers/apiError'
 import Category from '../../src/models/Category'
 import imageServices from '../services/imageServices'
 
-// GET all categorys
+// GET all categories
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     res.json(await categoryService.findAll())

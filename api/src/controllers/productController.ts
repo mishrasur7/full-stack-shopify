@@ -10,7 +10,7 @@ import imageServices from '../services/imageServices'
 // GET all products
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.json(await productService.findAll(0, 5, 'price'))
+    res.json(await productService.findAll(0, 20, 'price'))
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
