@@ -9,11 +9,12 @@ import { useAppDispatch } from "./redux/hooks/customAppHooks";
 import { fetchProducts } from "./redux/reducers/productReducer";
 
 function App() {
+  
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchProducts);
   }, []);
-  
+
   return (
     <div className="App">
       <Router>

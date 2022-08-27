@@ -22,19 +22,25 @@ const app = express()
 // Express configuration
 app.set('port', process.env.PORT || 3000)
 
+//access control configuration for api
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  next()
+})
+
 /// Passport configuration
 app.use(
-    session({
-      secret: `${process.env.SESSION_SECRET}`,
-      resave: true,
-      saveUninitialized: true,
-    })
-  )
-  app.use(passport.initialize())
-  app.use(passport.session())
+  session({
+    secret: `${process.env.SESSION_SECRET}`,
+    resave: true,
+    saveUninitialized: true,
+  })
+)
+app.use(passport.initialize())
+app.use(passport.session())
 
 // passport.use(googleStrategy)
-  passport.use(jwtStrategy)
+passport.use(jwtStrategy)
 
 // Global middleware
 app.use(apiContentType)
