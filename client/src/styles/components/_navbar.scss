@@ -1,0 +1,24 @@
+* {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav_main {
+    margin-left: 10em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.nav_login_theme{
+    margin-left: 20em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
