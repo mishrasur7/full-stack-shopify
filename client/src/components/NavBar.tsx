@@ -11,10 +11,10 @@ function NavBar() {
   return (
     <div className="main_nav">
       <div className="navbar_home_products">
-        <Link to="/" style={linkStyle}>
+        <Link to="" style={linkStyle}>
           <StoreIcon />
         </Link>
-        <Link to="/products" style={linkStyle}>
+        <Link to="/" style={linkStyle}>
           Products
         </Link>
       </div>

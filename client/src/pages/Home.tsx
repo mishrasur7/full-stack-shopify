@@ -5,7 +5,13 @@ function Home() {
 
   console.log("products", products);
 
-  return <div>Home page for products</div>;
+  return (
+    <div>
+      {products.map((value, key) => {
+        return <div>{value.title}</div>;
+      })}
+    </div>
+  );
 }
 
 export default Home;
