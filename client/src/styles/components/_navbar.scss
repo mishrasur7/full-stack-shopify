@@ -1,24 +1,23 @@
 * {
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
-
-.navbar {
+.main_nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1.5em 5em;
+    background-color: #002B5B;
 }
 
-.nav_main {
-    margin-left: 10em;
+.navbar_home_products {
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 3em;
 }
 
-.nav_login_theme{
-    margin-left: 20em;
+.navbar_login_cart_theme {
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 3em;
 }
-

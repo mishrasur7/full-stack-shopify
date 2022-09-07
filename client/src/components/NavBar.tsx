@@ -1,26 +1,36 @@
-import { AppBar, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import StoreIcon from '@mui/icons-material/Store';
 
-export default function NavBar() {
+function NavBar() {
+  const linkStyle = {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "1.3em",
+  };
   return (
-    <div>
-      <AppBar>
-        <Toolbar>
-          <div className="navbar"> 
-            <div className="nav_logo">
-              <Link to="/">SHOPIFY</Link>
-            </div>
-            <div className="nav_main">
-              <Link to="/products">Products</Link>
-              <Link to="/cart">Cart</Link>
-            </div>
-            <div className="nav_login_theme">
-              <Link to="/login">Login</Link>
-              <Link to="/theme">Theme</Link>
-            </div>
-          </div>
-        </Toolbar>
-      </AppBar>
+    <div className="main_nav">
+      <div className="navbar_home_products">
+        <Link to="/" style={linkStyle}>
+          <StoreIcon />
+        </Link>
+        <Link to="/products" style={linkStyle}>
+          Products
+        </Link>
+      </div>
+      <div className="navbar_login_cart_theme">
+        <Link to="/sign-in" style={linkStyle}>
+          Login
+        </Link>
+        <Link to="/cart" style={linkStyle}>
+          <AddShoppingCartIcon />
+        </Link>
+        <Link to="/theme" style={linkStyle}>
+          Theme
+        </Link>
+      </div>
     </div>
   );
 }
+
+export default NavBar;
