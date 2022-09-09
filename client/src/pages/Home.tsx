@@ -7,7 +7,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useAppSelector } from "../redux/hooks/customAppHooks";
 
@@ -17,7 +17,7 @@ function Home() {
   console.log("products", products);
 
   return (
-    <div>
+    <div className="home">
       {products.map((value, key) => {
         return (
           <Card className="card">

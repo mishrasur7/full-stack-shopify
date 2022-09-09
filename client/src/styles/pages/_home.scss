@@ -1,0 +1,12 @@
+.home {
+    margin: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.card {
+    width: 18em;
+}

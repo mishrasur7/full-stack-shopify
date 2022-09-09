@@ -25,9 +25,6 @@ function NavBar() {
         <Link to="/cart" style={linkStyle}>
           <AddShoppingCartIcon />
         </Link>
-        <Link to="/theme" style={linkStyle}>
-          Theme
-        </Link>
       </div>
     </div>
   );
