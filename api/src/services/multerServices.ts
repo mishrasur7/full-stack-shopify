@@ -9,10 +9,10 @@ const storage = multer.diskStorage({
 //reads image data from form input and stores in storage
 
 //product image
-const uploadProductImage = multer({ storage }).single('productImage')
+const uploadProductImage = multer().single('productImage')
 
 //category image
-const uploadCategoryImage = multer({ storage }).single('categoryImage')
+const uploadCategoryImage = multer().single('categoryImage')
 
 export default {
   uploadProductImage,

@@ -40,7 +40,8 @@ const createProduct = async (
   next: NextFunction
 ) => {
   try {
-    if (req.file?.path) {
+    if (req.file) {
+      console.log(req.file)
       const dataBuffer = fs.readFileSync(req.file.path)
       const data = await sharp(dataBuffer).resize(200, 200).toBuffer()
       const image = await imageServices.createImage(data)
