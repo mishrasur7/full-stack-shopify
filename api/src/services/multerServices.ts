@@ -6,12 +6,12 @@ import { dbConfig } from '../config/dbConfig'
 const storage = new GridFsStorage({
   url: dbConfig.url + dbConfig.database,
   file: (req, file) => {
-    const match = ['image/png', 'image/jpeg']
+    // const match = ['image/png', 'image/jpeg']
 
-    if (match.indexOf(file.mimetype) === -1) {
-      const filename = `${Date.now()}-suraj-${file.originalname}`
-      return filename
-    }
+    // if (match.indexOf(file.mimetype) === -1) {
+    //   const filename = `${Date.now()}-suraj-${file.originalname}`
+    //   return filename
+    // }
 
     return {
       bucketName: dbConfig.imgBucket,
