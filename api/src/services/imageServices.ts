@@ -7,6 +7,11 @@ const getSingleImage = async (
   return foundImage
 }
 
+const getAllImages = async () => {
+  const images = await Image.find()
+  return images
+}
+
 const createImage = async (data: Buffer): Promise<ImageDocument> => {
   const foundImage = await Image.findOne({ data: data })
   if (foundImage) {
@@ -21,5 +26,6 @@ const createImage = async (data: Buffer): Promise<ImageDocument> => {
 
 export default {
   getSingleImage,
+  getAllImages,
   createImage,
 }
