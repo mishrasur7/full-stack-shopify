@@ -27,7 +27,9 @@ const findOne = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-const createOne = async (req: Request, res: Response, next: NextFunction) => {}
+const createOne = async (req: Request, res: Response, next: NextFunction) => {
+
+}
 
 export default {
   findAll,

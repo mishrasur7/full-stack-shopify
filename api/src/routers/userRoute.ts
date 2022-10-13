@@ -6,8 +6,12 @@ import authentication from '../middlewares/authenticationMiddleware'
 
 const router = express.Router()
 
-
-router.get('/', passport.authenticate('jwt'), authentication.verifyAdmin,  userController.findAll)
+router.get(
+  '/',
+  passport.authenticate('jwt'),
+  authentication.verifyAdmin,
+  userController.findAll
+)
 router.get('/:userId', userController.findById)
 router.post('/', userController.createUser)
 router.post('/login', authentication.authenticateUser, userController.userLogin)
