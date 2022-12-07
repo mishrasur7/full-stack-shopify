@@ -80,4 +80,3 @@ https://vast-wave-18172.herokuapp.com/
 └── tsconfig.json
 </pre>
 
-## Client side will update soon
